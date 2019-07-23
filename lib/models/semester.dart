@@ -21,45 +21,25 @@ class Semester {
     setSemesterName(semesterName);
   }
 
-  double getMaxGpa() {
-    return this._maxGpa;
-  }
+  double getMaxGpa() => this._maxGpa;
 
-  double getGpaReceived() {
-    return this._gpaReceived;
-  }
+  double getGpaReceived() => this._gpaReceived;
 
-  double getNumberOfCredits() {
-    return this._numberOfCredits;
-  }
+  double getNumberOfCredits() => this._numberOfCredits;
 
-  String getSemesterName() {
-    return this._semesterName;
-  }
+  String getSemesterName() => this._semesterName;
 
-  List<Course> getCourses() {
-    return this._courses;
-  }
+  List<Course> getCourses() => this._courses;
 
-  void setMaxGpa(double maxGpa) {
-    this._maxGpa = maxGpa;
-  }
+  void setMaxGpa(double maxGpa) => this._maxGpa = maxGpa;
 
-  void setGpaReceived(double gpaReceived) {
-    this._gpaReceived = gpaReceived;
-  }
+  void setGpaReceived(double gpaReceived) => this._gpaReceived = gpaReceived;
 
-  void setNumberOfCredits(double numberOfCredits) {
-    this._numberOfCredits = numberOfCredits;
-  }
+  void setNumberOfCredits(double numberOfCredits) => this._numberOfCredits = numberOfCredits;
 
-  void setSemesterName(String semesterName) {
-    this._semesterName = semesterName;
-  }
+  void setSemesterName(String semesterName) => this._semesterName = semesterName;
 
-  void setCourses(List<Course> courses) {
-    this._courses = courses;
-  }
+  void setCourses(List<Course> courses) => this._courses = courses;
 
   void updateGpa() {
     List<Course> courses = getCourses();

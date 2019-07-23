@@ -24,49 +24,27 @@ class Course {
     setAssignmentGroups(assignmentGroups);
   }
 
-  double getMaxScore() {
-    return this._maxScore;
-  }
+  double getMaxScore() => this._maxScore;
 
-  double getScoreReceived() {
-    return this._scoreReceived;
-  }
+  double getScoreReceived() => this._scoreReceived;
 
-  double getNumberOfCredits() {
-    return this._numberOfCredits;
-  }
+  double getNumberOfCredits() => this._numberOfCredits;
 
-  String getCourseName() {
-    return this._courseName;
-  }
+  String getCourseName() => this._courseName;
 
-  List<AssignmentGroup> getAssignmentGroups() {
-    return this._assignmentGroups;
-  }
+  List<AssignmentGroup> getAssignmentGroups() => this._assignmentGroups;
 
-  double getGrade() {
-    return this._grade;
-  }
+  double getGrade() => this._grade;
  
-  void setMaxScore(double maxScore) {
-    this._maxScore = maxScore;
-  }
+  void setMaxScore(double maxScore) => this._maxScore = maxScore;
 
-  void setScoreReceived(double scoreReceived) {
-    this._scoreReceived = scoreReceived;
-  }
+  void setScoreReceived(double scoreReceived) => this._scoreReceived = scoreReceived;
 
-  void setNumberOfCredits(double numberOfCredits) {
-    this._numberOfCredits = numberOfCredits;
-  }
+  void setNumberOfCredits(double numberOfCredits) => this._numberOfCredits = numberOfCredits;
 
-  void setCourseName(String courseName) {
-    this._courseName = courseName;
-  }
+  void setCourseName(String courseName) => this._courseName = courseName;
 
-  void setAssignmentGroups(List<AssignmentGroup> assignmentGroups) {
-    this._assignmentGroups = assignmentGroups;
-  }
+  void setAssignmentGroups(List<AssignmentGroup> assignmentGroups) => this._assignmentGroups = assignmentGroups;
 
   void setGrade([double grade]) {
     if(grade != null) {

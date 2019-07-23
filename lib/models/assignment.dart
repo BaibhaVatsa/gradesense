@@ -8,50 +8,30 @@ class Assignment {
   String _remarks;
 
   Assignment({@required assignmentName, scoreReceived = 0, maxScore = 0, @required remarks, weightage = 1}) {
-      this.setAssignmentName(assignmentName);
-      this.setScoreReceived(scoreReceived);
-      this.setMaxScore(maxScore);
-      this.setRemarks(remarks);
-      this.setWeightage(weightage);
+      assignmentName(assignmentName);
+      scoreReceived(scoreReceived);
+      maxScore(maxScore);
+      remarks(remarks);
+      weightage(weightage);
     }
 
-  double getMaxScore() {
-    return this._maxScore;
-  }
+  double get maxScore => this._maxScore;
 
-  double getScoreReceived() {
-    return this._scoreReceived;
-  }
+  double get scoreReceived => this._scoreReceived;
 
-  double getWeightage() {
-    return this._weightage;
-  }
+  double get weightage => this._weightage;
 
-  String getAssignmentName() {
-    return this._assignmentName;
-  }
+  String get assignmentName => this._assignmentName;
 
-  String getRemarks() {
-    return this._remarks;
-  }
+  String get remarks => this._remarks;
 
-  void setMaxScore(double maxScore) {
-    this._maxScore = maxScore;
-  }
+  set maxScore(double maxScore) => this._maxScore = maxScore;
 
-  void setWeightage(double weightage){
-    this._weightage = weightage;
-  }
+  set weightage(double weightage) => this._weightage = weightage;
 
-  void setScoreReceived(double scoreReceived) {
-    this._scoreReceived = scoreReceived;
-  }
+  set scoreReceived(double scoreReceived) => this._scoreReceived = scoreReceived;
 
-  void setAssignmentName(String assignmentName) {
-    this._assignmentName = assignmentName;
-  }
+  set assignmentName(String assignmentName) => this._assignmentName = assignmentName;
 
-  void setRemarks(String remarks) {
-    this._remarks = remarks;
-  }
+  set remarks(String remarks) => this._remarks = remarks;
 }

@@ -21,45 +21,25 @@ class AssignmentGroup {
     setWeightage(weightage);
   }
 
-  double getWeightage() {
-    return this._weightage;
-  }
+  double getWeightage() => this._weightage;
 
-  double getMaxScore() {
-    return this._maxScore;
-  }
+  double getMaxScore() => this._maxScore;
 
-  double getScoreReceived() {
-    return this._scoreReceived;
-  }
+  double getScoreReceived() => this._scoreReceived;
 
-  String getAssignmentGroupName() {
-    return this._assignmentGroupName;
-  }
+  String getAssignmentGroupName() => this._assignmentGroupName;
 
-  List<Assignment> getAssignments() {
-    return this._assignments;
-  }
+  List<Assignment> getAssignments() => this._assignments;
 
-  void setWeightage(double weightage) {
-    this._weightage = weightage;
-  }
+  void setWeightage(double weightage) => this._weightage = weightage;
 
-  void setMaxScore(double maxScore) {
-    this._maxScore = maxScore;
-  }
+  void setMaxScore(double maxScore) => this._maxScore = maxScore;
 
-  void setScoreReceived(double scoreReceived) {
-    this._scoreReceived = scoreReceived;
-  }
+  void setScoreReceived(double scoreReceived) => this._scoreReceived = scoreReceived;
 
-  void setAssignmentGroupName(String assignmentGroupName) {
-    this._assignmentGroupName = assignmentGroupName;
-  }
+  void setAssignmentGroupName(String assignmentGroupName) => this._assignmentGroupName = assignmentGroupName;
 
-  void setAssignments(List<Assignment> assignments) {
-    this._assignments = assignments;
-  }
+  void setAssignments(List<Assignment> assignments) => this._assignments = assignments;
 
   // TODO
   //    Add weightage
@@ -71,9 +51,9 @@ class AssignmentGroup {
     
     for (int i = 0; i < numberOfAssignments; ++i) {
       Assignment assignmentAtI = assignments[i];
-      double weightageThisAssignment = assignmentAtI.getWeightage();
-      updatedMaxScore += weightageThisAssignment*assignmentAtI.getMaxScore();
-      updatedScoreReceived += weightageThisAssignment*assignmentAtI.getScoreReceived();
+      double weightageThisAssignment = assignmentAtI.weightage;
+      updatedMaxScore += weightageThisAssignment*assignmentAtI.maxScore;
+      updatedScoreReceived += weightageThisAssignment*assignmentAtI.scoreReceived;
     }
 
     if (updatedScoreReceived != getScoreReceived()) {

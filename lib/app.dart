@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'loginview.dart';
+import 'views/loginview.dart';
 
 class GPAApp extends StatelessWidget {
   @override

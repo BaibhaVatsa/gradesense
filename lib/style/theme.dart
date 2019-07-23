@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'styles.dart';
 
 final ThemeData appTheme = buildAppTheme();
-final String logoImageAddress = 'assets/images/logo.png';
 
 ThemeData buildAppTheme() {
   final ThemeData base = ThemeData.dark();

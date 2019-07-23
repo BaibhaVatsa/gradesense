@@ -9,9 +9,11 @@ class User {
   String _userEmail;
   String _hashedPassword;
   String _userImageUrl;
+  int _securityQuestion;
+  String _securityQuestionAnswer;
   List<Semester> _semesters;
 
-  User({maxGpa = 4.0, gpaReceived = 0, numberOfCredits = 0, @required userName, @required userEmail, @required hashedPassword, userImageUrl, @required semesters}) {
+  User({maxGpa = 4.0, gpaReceived = 0, numberOfCredits = 0, @required securityQuestion, @required securityQuestionAnswer, @required userName, @required userEmail, @required hashedPassword, userImageUrl = "", @required semesters}) {
     setMaxGpa(maxGpa);
     if (numberOfCredits == 0 && gpaReceived == 0) {
       updateGpa();
@@ -22,75 +24,55 @@ class User {
     setUserName(userName);
     setUserEmail(userEmail);
     setHashedPassword(hashedPassword);
-    if (userImageUrl == null) {
+    if (userImageUrl != "") {
       setUserImageUrl(userImageUrl);
     }
+    setSecurityQuestion(securityQuestion);
+    setSecurityQuestionAnswer(securityQuestionAnswer);
     setSemesters(semesters);
   }
 
-  double getMaxGpa() {
-    return this._maxGpa;
-  }
+  int getSecurityQuestion() => this._securityQuestion;
 
-  double getGpaReceived() {
-    return this._gpaReceived;
-  }
+  String getSecurityQuestionAnswer() => this._securityQuestionAnswer;
 
-  double getNumberOfCredits() {
-    return this._numberOfCredits;
-  }
+  double getMaxGpa() => this._maxGpa;
 
-  String getUserName() {
-    return this._userName;
-  }
+  double getGpaReceived() => this._gpaReceived;
 
-  String getUserEmail() {
-    return this._userEmail;
-  }
+  double getNumberOfCredits() => this._numberOfCredits;
 
-  String getHashedPassword() {
-    return this._hashedPassword;
-  } 
+  String getUserName() => this._userName;
 
-  String getUserImageUrl() {
-    return this._userImageUrl;
-  }
+  String getUserEmail() => this._userEmail;
 
-  List<Semester> getSemesters() {
-    return this._semesters;
-  }
+  String getHashedPassword() => this._hashedPassword;
 
-  void setMaxGpa(double maxGpa) {
-    this._maxGpa = maxGpa;
-  } 
+  String getUserImageUrl() => this._userImageUrl;
 
-  void setGpaReceived(double gpaReceived) {
-    this._gpaReceived = gpaReceived;
-  }
+  List<Semester> getSemesters() => this._semesters;
 
-  void setNumberOfCredits(double numberOfCredits) {
-    this._numberOfCredits = numberOfCredits;
-  }
+  Semester getSemester(int index) => this._semesters[index];
 
-  void setUserName(String userName) {
-    this._userName = userName;
-  }
+  void setSecurityQuestion(int securityQuestion) => this._securityQuestion = securityQuestion;
 
-  void setUserEmail(String userEmail) {
-    this._userEmail = userEmail;
-  }
+  void setSecurityQuestionAnswer(String securityQuestionAnswer) => this._securityQuestionAnswer = securityQuestionAnswer;
 
-  void setHashedPassword(String hashedPassword) {
-    this._hashedPassword = hashedPassword;
-  }
+  void setMaxGpa(double maxGpa) => this._maxGpa = maxGpa;
 
-  void setUserImageUrl(String userImageUrl) {
-    this._userImageUrl = userImageUrl;
-  }
+  void setGpaReceived(double gpaReceived) => this._gpaReceived = gpaReceived;
 
-  void setSemesters(List<Semester> semesters) {
-    this._semesters = semesters;
-  }
+  void setNumberOfCredits(double numberOfCredits) => this._numberOfCredits = numberOfCredits;
+
+  void setUserName(String userName) => this._userName = userName;
+
+  void setUserEmail(String userEmail) => this._userEmail = userEmail;
+
+  void setHashedPassword(String hashedPassword) => this._hashedPassword = hashedPassword;
+
+  void setUserImageUrl(String userImageUrl) => this._userImageUrl = userImageUrl;
+
+  void setSemesters(List<Semester> semesters) => this._semesters = semesters;
 
   void updateGpa() {
     List<Semester> semesters = getSemesters();

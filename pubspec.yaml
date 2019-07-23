@@ -9,18 +9,22 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # cloud_firestore: ^0.12.1
+  # cloud_firestore:
   cupertino_icons: ^0.1.2
+  # json_annotation:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # json_serializable:
+  provider:
 
 # The following section is specific to Flutter.
 flutter:
   uses-material-design: true
   assets:
    - assets/images/logo.png
+   - assets/data/users.json
 
   fonts:
     - family: Muli
