@@ -1,9 +1,14 @@
-import 'parsedata.dart';
+import 'package:gpa_app/models/user.dart';
 
 class ProfileController {
-  static String getUserImageUrl() => ParseData.currentUser.getUserImageUrl();
 
-  static String getUserName() => ParseData.currentUser.getUserName();
+  static User _user = null;
 
-  static String getUserEmail() => ParseData.currentUser.getUserEmail();
+  static void setUser(User user) => _user = user;
+
+  static String getUserImageUrl() => _user.getUserImageUrl();
+
+  static String getUserName() => _user.getUserName();
+
+  static String getUserEmail() => _user.getUserEmail();
 }

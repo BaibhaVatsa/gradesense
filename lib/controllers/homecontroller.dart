@@ -4,17 +4,17 @@ import '../models/user.dart';
 class HomePageController {
   static String appBarTitle() => "GradeSense";
 
-  static User user = null;
+  static User _user = null;
 
-  static setUser(User usr) => user = usr;
+  static setUser(User usr) => _user = usr;
 
-  static String getUserImageUrl() => user.getUserImageUrl();
+  static String getUserImageUrl() => _user.getUserImageUrl();
 
-  static String getUserName() => user.getUserName();
+  static String getUserName() => _user.getUserName();
 
   static String welcomeMessage() => "Welcome ${getUserName()}!";
 
-  static String getUserOverallGpa() =>  user.getGpaReceived().toString();
+  static String getUserOverallGpa() =>  _user.getGpaReceived().toString();
 
-  static String getUserCurrentSemGpa() => user.getSemester(0).getGpaReceived().toString();
+  static String getUserCurrentSemGpa() => _user.getSemester(0).getGpaReceived().toString();
 }

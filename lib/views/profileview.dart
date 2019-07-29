@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../controllers/profilecontroller.dart';
 import 'components.dart' as components;
+import 'package:provider/provider.dart';
+import 'package:gpa_app/providers/usermodel.dart';
 
 class ProfilePage extends StatelessWidget {
   // @override
@@ -12,21 +14,25 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListView(
-          children: _renderBody(),
+        child: Container(child: Consumer<UserModel>(
+          builder: (context, user, child)  {
+            ProfileController.setUser(user.user);
+            return _renderBody();
+          },
+        )
         )
       ),
     );
   }
 
-  List<Widget> _renderBody() {
+  Widget _renderBody() {
     List<Widget> body;
     body.add(_renderProfilePicture());
     body.add(components.renderPadding(10.0));
     body.add(_renderUsername());
     body.add(components.renderPadding(10.0));
     body.add(_renderUserEmail());
-    return body;
+    return ListView (children: body);
   }
 
   Widget _renderProfilePicture() {

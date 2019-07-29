@@ -12,7 +12,10 @@ class HomePage extends StatelessWidget {
       appBar: _renderHomeAppBar(),
       body: SafeArea(
         child: Container(child: Consumer<UserModel>(
-          builder: (context, user, child) => _renderHomePage(user),
+          builder: (context, user, child) {
+            HomePageController.setUser(user.user);
+            return _renderHomePage();
+          },
           )
         )
       )
@@ -28,8 +31,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _renderHomePage(UserModel user) {
-    HomePageController.setUser(user.user);
+  Widget _renderHomePage() {
     var homePage = List<Widget>();
     homePage.add(_renderProfileImage());
     homePage.add(_renderWelcomeMessage());
