@@ -9,15 +9,15 @@ class AssignmentGroup {
   String _assignmentGroupName;
   List<Assignment> _assignments;
 
-  AssignmentGroup({maxScore = 0, scoreReceived = 0, @required assignmentGroupName, @required assignments, weightage = 1}) {
-    if (scoreReceived == 0 && maxScore == 0) {
+  AssignmentGroup({maxScore = 0.0, scoreReceived = 0.0, @required assignmentGroupName, @required assignments, weightage = 1.0}) {
+    setAssignments(assignments);
+    if (scoreReceived == 0.0 && maxScore == 0.0) {
       updateScores();
     } else {
       setMaxScore(maxScore);
     }
     setScoreReceived(scoreReceived);
     setAssignmentGroupName(assignmentGroupName);
-    setAssignments(assignments);
     setWeightage(weightage);
   }
 

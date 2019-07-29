@@ -7,12 +7,14 @@ class Assignment {
   String _assignmentName;
   String _remarks;
 
-  Assignment({@required assignmentName, scoreReceived = 0, maxScore = 0, @required remarks, weightage = 1}) {
-      assignmentName(assignmentName);
-      scoreReceived(scoreReceived);
-      maxScore(maxScore);
-      remarks(remarks);
-      weightage(weightage);
+  Assignment({@required assignmentName, scoreReceived = 0.0, maxScore = 0.0, @required remarks, weightage = 1.0}) {
+//      assignmentName(assignmentName);
+    this._assignmentName = assignmentName;
+      this._scoreReceived = scoreReceived;
+      this._maxScore = maxScore;
+//      remarks(remarks);
+    this._remarks = remarks;
+    this._weightage = weightage;
     }
 
   double get maxScore => this._maxScore;

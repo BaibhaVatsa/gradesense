@@ -9,19 +9,19 @@ class Course {
   String _courseName;
   List<AssignmentGroup> _assignmentGroups;
 
-  Course({maxScore = 0, scoreReceived = 0, grade = 0, @required numberOfCredits, @required courseName, @required assignmentGroups}) {
-    if (scoreReceived == 0 && maxScore == 0) {
+  Course({maxScore = 0.0, scoreReceived = 0.0, grade = 0.0, @required numberOfCredits, @required courseName, @required assignmentGroups}) {
+    setAssignmentGroups(assignmentGroups);
+    if (scoreReceived == 0.0 && maxScore == 0.0) {
       updateGrade();
     } else {
       setMaxScore(maxScore);
       setScoreReceived(scoreReceived);
     }
-    if (grade != 0) {
+    if (grade != 0.0) {
       setGrade(grade);
     }
     setNumberOfCredits(numberOfCredits);
     setCourseName(courseName);
-    setAssignmentGroups(assignmentGroups);
   }
 
   double getMaxScore() => this._maxScore;

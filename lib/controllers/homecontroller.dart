@@ -1,15 +1,20 @@
 import 'parsedata.dart';
+import '../models/user.dart';
 
 class HomePageController {
-  static String appBarTitle() => "GPA Calculator";
+  static String appBarTitle() => "GradeSense";
 
-  static String getUserImageUrl() => ParseData.currentUser.getUserImageUrl();
+  static User user = null;
 
-  static String getUserName() => ParseData.currentUser.getUserName();
+  static setUser(User usr) => user = usr;
+
+  static String getUserImageUrl() => user.getUserImageUrl();
+
+  static String getUserName() => user.getUserName();
 
   static String welcomeMessage() => "Welcome ${getUserName()}!";
 
-  static String getUserOverallGpa() =>  ParseData.currentUser.getGpaReceived().toString();
+  static String getUserOverallGpa() =>  user.getGpaReceived().toString();
 
-  static String getUserCurrentSemGpa() => ParseData.currentUser.getSemester(0).getGpaReceived().toString();
+  static String getUserCurrentSemGpa() => user.getSemester(0).getGpaReceived().toString();
 }

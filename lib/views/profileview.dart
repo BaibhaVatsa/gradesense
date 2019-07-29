@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import '../controllers/profilecontroller.dart';
+import 'components.dart' as components;
 
-class ProfilePage extends StatefulWidget {
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
+class ProfilePage extends StatelessWidget {
+  // @override
+  // _ProfilePageState createState() => _ProfilePageState();
+// }
   
-class _ProfilePageState extends State<ProfilePage> {
+// class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +22,9 @@ class _ProfilePageState extends State<ProfilePage> {
   List<Widget> _renderBody() {
     List<Widget> body;
     body.add(_renderProfilePicture());
+    body.add(components.renderPadding(10.0));
     body.add(_renderUsername());
+    body.add(components.renderPadding(10.0));
     body.add(_renderUserEmail());
     return body;
   }

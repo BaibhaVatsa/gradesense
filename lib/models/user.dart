@@ -9,13 +9,14 @@ class User {
   String _userEmail;
   String _hashedPassword;
   String _userImageUrl;
-  int _securityQuestion;
-  String _securityQuestionAnswer;
+//  int _securityQuestion;
+//  String _securityQuestionAnswer;
   List<Semester> _semesters;
-
-  User({maxGpa = 4.0, gpaReceived = 0, numberOfCredits = 0, @required securityQuestion, @required securityQuestionAnswer, @required userName, @required userEmail, @required hashedPassword, userImageUrl = "", @required semesters}) {
+//  @required securityQuestion, @required securityQuestionAnswer,
+  User({maxGpa = 4.0, gpaReceived = 0.0, numberOfCredits = 0.0, @required userName, @required userEmail, @required hashedPassword, userImageUrl = "", @required semesters}) {
+    setSemesters(semesters);
     setMaxGpa(maxGpa);
-    if (numberOfCredits == 0 && gpaReceived == 0) {
+    if (numberOfCredits == 0.0 && gpaReceived == 0.0) {
       updateGpa();
     } else {
       setGpaReceived(gpaReceived);
@@ -27,14 +28,13 @@ class User {
     if (userImageUrl != "") {
       setUserImageUrl(userImageUrl);
     }
-    setSecurityQuestion(securityQuestion);
-    setSecurityQuestionAnswer(securityQuestionAnswer);
-    setSemesters(semesters);
+//    setSecurityQuestion(securityQuestion);
+//    setSecurityQuestionAnswer(securityQuestionAnswer);
   }
 
-  int getSecurityQuestion() => this._securityQuestion;
-
-  String getSecurityQuestionAnswer() => this._securityQuestionAnswer;
+//  int getSecurityQuestion() => this._securityQuestion;
+//
+//  String getSecurityQuestionAnswer() => this._securityQuestionAnswer;
 
   double getMaxGpa() => this._maxGpa;
 
@@ -54,9 +54,9 @@ class User {
 
   Semester getSemester(int index) => this._semesters[index];
 
-  void setSecurityQuestion(int securityQuestion) => this._securityQuestion = securityQuestion;
-
-  void setSecurityQuestionAnswer(String securityQuestionAnswer) => this._securityQuestionAnswer = securityQuestionAnswer;
+//  void setSecurityQuestion(int securityQuestion) => this._securityQuestion = securityQuestion;
+//
+//  void setSecurityQuestionAnswer(String securityQuestionAnswer) => this._securityQuestionAnswer = securityQuestionAnswer;
 
   void setMaxGpa(double maxGpa) => this._maxGpa = maxGpa;
 
@@ -77,7 +77,7 @@ class User {
   void updateGpa() {
     List<Semester> semesters = getSemesters();
     int numberOfSemesters = semesters.length;
-    double updatedNumberOfCredits = 0, updatedGpaReceived = 0;
+    double updatedNumberOfCredits = 0.0, updatedGpaReceived = 0.0;
     
     for (int i = 0; i < numberOfSemesters; ++i) {
       Semester semesterAtI = semesters[i];

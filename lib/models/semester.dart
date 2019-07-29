@@ -9,15 +9,15 @@ class Semester {
   String _semesterName;
   List<Course> _courses;
 
-  Semester({maxGpa = 4.0, gpaReceived = 0, numberOfCredits = 0, @required semesterName, @required courses}) {
-    if (numberOfCredits == 0 && gpaReceived == 0) {
+  Semester({maxGpa = 4.0, gpaReceived = 0.0, numberOfCredits = 0.0, @required semesterName, @required courses}) {
+    setCourses(courses);
+    setMaxGpa(maxGpa);
+    if (numberOfCredits == 0.0 && gpaReceived == 0.0) {
       updateGpa();
     } else {
       setGpaReceived(gpaReceived);
       setNumberOfCredits(numberOfCredits);
     }
-    setMaxGpa(maxGpa);
-    setCourses(courses);
     setSemesterName(semesterName);
   }
 
@@ -44,7 +44,7 @@ class Semester {
   void updateGpa() {
     List<Course> courses = getCourses();
     int numberOfCourses = courses.length;
-    double updatedNumberOfCredits = 0, updatedGpaReceived = 0;
+    double updatedNumberOfCredits = 0.0, updatedGpaReceived = 0.0;
     
     for (int i = 0; i < numberOfCourses; ++i) {
       Course courseAtI = courses[i];

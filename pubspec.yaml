@@ -12,12 +12,13 @@ dependencies:
   # cloud_firestore:
   cupertino_icons: ^0.1.2
   # json_annotation:
+  provider:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   # json_serializable:
-  provider:
+  # provider:
 
 # The following section is specific to Flutter.
 flutter:

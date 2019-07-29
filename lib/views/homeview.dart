@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import '../controllers/homecontroller.dart';
+import 'package:gpa_app/controllers/homecontroller.dart';
+import 'package:gpa_app/views/components.dart';
+import 'package:gpa_app/providers/usermodel.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
 
@@ -8,7 +11,10 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: _renderHomeAppBar(),
       body: SafeArea(
-        child: _renderHomePage(),
+        child: Container(child: Consumer<UserModel>(
+          builder: (context, user, child) => _renderHomePage(user),
+          )
+        )
       )
     );
   }
@@ -22,7 +28,8 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _renderHomePage() {
+  Widget _renderHomePage(UserModel user) {
+    HomePageController.setUser(user.user);
     var homePage = List<Widget>();
     homePage.add(_renderProfileImage());
     homePage.add(_renderWelcomeMessage());

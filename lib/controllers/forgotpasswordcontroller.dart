@@ -15,8 +15,8 @@ class ForgotPasswordController {
   static BorderSide fieldBorderSide() => _incorrectEmailSecurityAnswer ? BorderSide(color: Colors.red) : BorderSide();
 
   static String getSecurityQuestion() { 
-    int index = ParseData.currentUser.getSecurityQuestion();
-    return ParseData.securityQuestions[index];
+//    int index = ParseData.currentUser.getSecurityQuestion();
+//    return ParseData.securityQuestions[index];
   }
   static void cancelButtonPressed() {
     _clearInputFields();
@@ -42,9 +42,9 @@ class ForgotPasswordController {
   }
 
   static bool validateUser(String userEmail, String securityQuestion) {
-    if (ParseData.currentUser.getUserEmail() == userEmail && ParseData.currentUser.getSecurityQuestionAnswer() == securityQuestion) {
+//    if (ParseData.currentUser.getUserEmail() == userEmail && ParseData.currentUser.getSecurityQuestionAnswer() == securityQuestion) {
       return true;
-    }
-    return false;
+//    }
+//    return false;
   }
 }
