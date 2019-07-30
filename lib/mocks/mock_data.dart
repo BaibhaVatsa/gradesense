@@ -16,7 +16,7 @@ static User fetchAny() {
         userName: 'Elon Musk',
         userEmail: 'elonmusk@tesla.com',
         hashedPassword: 'spacex',
-        userImageUrl: 'assets/images/mock_2.png',
+        userImageUrl: '../../assets/images/logo.png',
         semesters: [
           Semester(
               semesterName: "Fall 2019",

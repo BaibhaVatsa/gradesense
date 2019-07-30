@@ -1,15 +1,27 @@
-import '../models/user.dart';
+import '../models/assignmentgroup.dart';
+import '../models/course.dart';
 
 class AssignmentGroupsController {
-  static User _user = null;
+  Course _course;
+  List<AssignmentGroup> _assignmentGroups;
 
-  static setUser(User usr) => _user = usr;
 
-  static String getUserImageUrl() => _user.getUserImageUrl();
+  AssignmentGroupsController(Course course) {
+    this._course = course;
+    this._assignmentGroups = this._course.getAssignmentGroups();
+  }
 
-  static String getUserName() => _user.getUserName();
+  int get numAssignmentGroups => this._assignmentGroups.length;
 
-  static String getUserOverallGpa() =>  _user.getGpaReceived().toString();
+  String assignmentGroupText(int index) {
+    AssignmentGroup thisAssignmentGroup = this._assignmentGroups[index];
+    return thisAssignmentGroup.getAssignmentGroupName() + "\t" + thisAssignmentGroup.getScoreReceived().toString() + "/" + thisAssignmentGroup.getMaxScore().toString();
+  }
 
-  static String getUserCurrentSemGpa() => _user.getSemester(0).getGpaReceived().toString();
+  void assignmentGroupClicked(int index, context) {
+
+  }
+
+
+
 }

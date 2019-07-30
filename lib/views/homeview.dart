@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
         child: Container(child: Consumer<UserModel>(
           builder: (context, user, child) {
             HomePageController.setUser(user.user);
-            return _renderHomePage();
+            return _renderHomePage(context);
           },
           )
         )
@@ -31,11 +31,11 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _renderHomePage() {
+  Widget _renderHomePage(BuildContext context) {
     var homePage = List<Widget>();
-    homePage.add(_renderProfileImage());
-    homePage.add(_renderWelcomeMessage());
-    homePage.add(_renderGpaOverall());
+//    homePage.add(_renderProfileImage());
+    homePage.add(_renderWelcomeMessage(context));
+    homePage.add(_renderGpaOverall(context));
     homePage.add(_renderGpaCurrentSem());
     return Column(
       children: homePage
@@ -46,12 +46,18 @@ class HomePage extends StatelessWidget {
     return Image.asset(HomePageController.getUserImageUrl());
   }
 
-  Widget _renderWelcomeMessage() {
-    return Text(HomePageController.welcomeMessage());
+  Widget _renderWelcomeMessage(BuildContext context) {
+    return GestureDetector(
+      child: Text(HomePageController.welcomeMessage()),
+      onTap: () => HomePageController.welcomeMessageClicked(context),
+    );
   }
 
-  Widget _renderGpaOverall() {
-    return Text(HomePageController.getUserOverallGpa());
+  Widget _renderGpaOverall(BuildContext context) {
+    return GestureDetector(
+        child: Text(HomePageController.getUserOverallGpa()),
+      onTap: () => HomePageController.gpaOverallClicked(context),
+    );
   }
 
   Widget _renderGpaCurrentSem() {

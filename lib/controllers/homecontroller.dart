@@ -1,10 +1,28 @@
-import 'parsedata.dart';
-import '../models/user.dart';
+import 'package:gpa_app/views/profileview.dart';
+import 'package:gpa_app/models/user.dart';
+import 'package:flutter/material.dart';
+import 'package:gpa_app/views/semestersview.dart';
 
 class HomePageController {
   static String appBarTitle() => "GradeSense";
 
   static User _user = null;
+
+  static void welcomeMessageClicked(BuildContext context) {
+    Navigator.of(context).push(
+        MaterialPageRoute(
+            builder: (context) => ProfilePage()
+        )
+    );
+  }
+
+  static void gpaOverallClicked(BuildContext context) {
+    Navigator.of(context).push(
+        MaterialPageRoute(
+            builder: (context) => SemesterPage()
+        )
+    );
+  }
 
   static setUser(User usr) => _user = usr;
 

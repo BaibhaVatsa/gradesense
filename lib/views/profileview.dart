@@ -5,11 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:gpa_app/providers/usermodel.dart';
 
 class ProfilePage extends StatelessWidget {
-  // @override
-  // _ProfilePageState createState() => _ProfilePageState();
-// }
-  
-// class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,13 +21,17 @@ class ProfilePage extends StatelessWidget {
   }
 
   Widget _renderBody() {
-    List<Widget> body;
-    body.add(_renderProfilePicture());
+    var body = new List<Widget>();
+//    body.add(_renderProfilePicture());
     body.add(components.renderPadding(10.0));
     body.add(_renderUsername());
     body.add(components.renderPadding(10.0));
     body.add(_renderUserEmail());
-    return ListView (children: body);
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: body
+    );
   }
 
   Widget _renderProfilePicture() {

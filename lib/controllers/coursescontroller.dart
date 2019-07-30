@@ -1,15 +1,30 @@
-import '../models/user.dart';
+import '../models/course.dart';
+import '../models/semester.dart';
+import 'package:flutter/material.dart';
+import '../views/assignmentgroupsview.dart';
 
 class CoursesController {
-  static User _user = null;
 
-  static setUser(User usr) => _user = usr;
+    CoursesController(Semester sem) {
+      this._semester = sem;
+      this._courses = this._semester.getCourses();
+    }
 
-  static String getUserImageUrl() => _user.getUserImageUrl();
+    List<Course> _courses;
+    Semester _semester;
 
-  static String getUserName() => _user.getUserName();
+    int get numCourses => this._courses.length;
 
-  static String getUserOverallGpa() =>  _user.getGpaReceived().toString();
+    void courseClicked(int index, BuildContext context) {
+      Navigator.of(context).push(
+          MaterialPageRoute(
+              builder: (context) => AssignmentGroupsPage(courseIndex: index, semesterIndex: 0)
+          )
+      );
+    }
 
-  static String getUserCurrentSemGpa() => _user.getSemester(0).getGpaReceived().toString();
+    String courseText(int index) {
+      Course thisCourse = this._courses[index];
+      return thisCourse.getCourseName() + "\t" + thisCourse.getNumberOfCredits().toString() + "\t" + thisCourse.getScoreReceived().toString() + "/" + thisCourse.getMaxScore().toString();
+    }
 }

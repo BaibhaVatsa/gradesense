@@ -29,6 +29,8 @@ class Semester {
 
   String getSemesterName() => this._semesterName;
 
+  Course getCourse(int i) => this._courses[i];
+
   List<Course> getCourses() => this._courses;
 
   void setMaxGpa(double maxGpa) => this._maxGpa = maxGpa;
